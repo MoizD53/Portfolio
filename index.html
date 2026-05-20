@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moiz Dheela — Developer Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- ======================== CUSTOM CURSOR ======================== -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ======================== LOADER ======================== -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">
+        <span class="loader-initials">MD</span>
+        <div class="loader-glow"></div>
+      </div>
+      <div class="loader-bar-wrap">
+        <div class="loader-bar" id="loaderBar"></div>
+      </div>
+      <p class="loader-text">Initializing Portfolio<span class="dots">...</span></p>
+    </div>
+  </div>
+
+  <!-- ======================== NAV ======================== -->
+  <nav class="nav" id="nav">
+    <a href="#hero" class="nav-logo">MD<span class="nav-logo-dot">.</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#journey">Journey</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ======================== HERO ======================== -->
+  <section class="hero" id="hero">
+    <canvas id="particleCanvas"></canvas>
+    <div class="hero-content">
+      <p class="hero-greeting reveal">Hey there, I'm</p>
+      <h1 class="hero-name reveal">Moiz<br /><span class="hero-name-accent">Dheela</span></h1>
+      <p class="hero-role reveal">
+        <span class="typing-cursor">|</span>
+        <span class="typed-text" id="typedText"></span>
+      </p>
+      <p class="hero-desc reveal">
+        3rd Year CSE Student · Karnavati University · Gandhinagar<br />
+        Passionate about AI, Full Stack Dev &amp; Building Cool Stuff.
+      </p>
+      <div class="hero-btns reveal">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="#contact" class="btn btn-ghost">Contact Me</a>
+        <!-- Replace href with your actual resume file path e.g. assets/resume.pdf -->
+        <a href="assets/resume.pdf" class="btn btn-outline" download>
+          <i class="fa-solid fa-download"></i> Resume
+        </a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <div class="scroll-arrow"></div>
+      <span>Scroll</span>
+    </div>
+    <!-- Floating shapes -->
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+  </section>
+
+  <!-- ======================== ABOUT ======================== -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="section-label reveal">01 — About</div>
+      <h2 class="section-title reveal">Who I Am</h2>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>
+            I'm <strong>Moiz Dheela</strong>, a Computer Science Engineering student at
+            Karnavati University with a deep passion for building things that live on the internet.
+          </p>
+          <p>
+            I thrive at the intersection of <span class="highlight">AI</span>,
+            <span class="highlight">Full Stack Development</span>, and
+            <span class="highlight">clean, purposeful design</span>. Currently sharpening my
+            skills in DSA, backend systems, and exploring how machine learning reshapes the web.
+          </p>
+          <p>
+            When I'm not coding, I'm reading about emerging tech, experimenting with side projects,
+            or figuring out how to break things in the most productive way possible.
+          </p>
+        </div>
+        <div class="about-cards reveal">
+          <div class="about-card glass">
+            <div class="about-card-icon"><i class="fa-solid fa-code"></i></div>
+            <h3>Developer</h3>
+            <p>Building web apps with modern tools and clean architecture.</p>
+          </div>
+          <div class="about-card glass">
+            <div class="about-card-icon"><i class="fa-solid fa-brain"></i></div>
+            <h3>AI Enthusiast</h3>
+            <p>Fascinated by machine learning and intelligent systems.</p>
+          </div>
+          <div class="about-card glass">
+            <div class="about-card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <h3>Student</h3>
+            <p>3rd Year B.Tech CSE — Karnavati University, Gandhinagar.</p>
+          </div>
+          <div class="about-card glass">
+            <div class="about-card-icon"><i class="fa-solid fa-rocket"></i></div>
+            <h3>Builder</h3>
+            <p>Always working on something new, always learning.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== SKILLS ======================== -->
+  <section class="section skills" id="skills">
+    <div class="container">
+      <div class="section-label reveal">02 — Skills</div>
+      <h2 class="section-title reveal">Tech Stack</h2>
+      <p class="section-sub reveal">Technologies I work with and love.</p>
+      <div class="skills-grid">
+        <!-- Each skill ball -->
+        <div class="skill-ball reveal" data-skill="HTML5">
+          <div class="skill-orb">
+            <i class="fa-brands fa-html5"></i>
+          </div>
+          <span>HTML5</span>
+        </div>
+        <div class="skill-ball reveal" data-skill="CSS3">
+          <div class="skill-orb">
+            <i class="fa-brands fa-css3-alt"></i>
+          </div>
+          <span>CSS3</span>
+        </div>
+        <div class="skill-ball reveal" data-skill="JavaScript">
+          <div class="skill-orb">
+            <i class="fa-brands fa-js"></i>
+          </div>
+          <span>JavaScript</span>
+        </div>
+        <div class="skill-ball reveal" data-skill="Node.js">
+          <div class="skill-orb">
+            <i class="fa-brands fa-node-js"></i>
+          </div>
+          <span>Node.js</span>
+        </div>
+        <div class="skill-ball reveal" data-skill="React">
+          <div class="skill-orb">
+            <i class="fa-brands fa-react"></i>
+          </div>
+          <span>React</span>
+        </div>
+        <div class="skill-ball reveal" data-skill="Python">
+          <div class="skill-orb">
+            <i class="fa-brands fa-python"></i>
+          </div>
+          <span>Python</span>
+        </div>
+        <div class="skill-ball reveal" data-skill="C">
+          <div class="skill-orb skill-text-orb">C</div>
+          <span>C</span>
+        </div>
+        <div class="skill-ball reveal" data-skill="C++">
+          <div class="skill-orb skill-text-orb">C++</div>
+          <span>C++</span>
+        </div>
+        <div class="skill-ball reveal" data-skill="Linux">
+          <div class="skill-orb">
+            <i class="fa-brands fa-linux"></i>
+          </div>
+          <span>Linux</span>
+        </div>
+        <div class="skill-ball reveal" data-skill="DSA">
+          <div class="skill-orb skill-text-orb">DSA</div>
+          <span>DSA</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== PROJECTS ======================== -->
+  <section class="section projects" id="projects">
+    <div class="container">
+      <div class="section-label reveal">03 — Projects</div>
+      <h2 class="section-title reveal">What I've Built</h2>
+      <p class="section-sub reveal">A collection of personal &amp; academic projects.</p>
+      <div class="projects-grid">
+
+        <!-- PROJECT CARD — replace image src, title, desc, and links -->
+        <div class="project-card glass reveal">
+          <!-- Replace src with your project screenshot: assets/project1.png -->
+          <div class="project-img-wrap">
+            <img src="assets/project1.png" alt="Project 1" class="project-img" onerror="this.parentElement.classList.add('no-img')" />
+            <div class="project-img-placeholder"><i class="fa-solid fa-code"></i></div>
+          </div>
+          <div class="project-info">
+            <span class="project-tag">Python</span>
+            <h3 class="project-title">Python Automation Scripts</h3>
+            <p class="project-desc">
+              A collection of Python scripts for automation tasks, data handling, and logic-building exercises.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/moizdheela" target="_blank" class="btn btn-sm btn-ghost">
+                <i class="fa-brands fa-github"></i> GitHub
+              </a>
+              <a href="#" class="btn btn-sm btn-outline">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card glass reveal">
+          <div class="project-img-wrap">
+            <img src="assets/project2.png" alt="Project 2" class="project-img" onerror="this.parentElement.classList.add('no-img')" />
+            <div class="project-img-placeholder"><i class="fa-solid fa-globe"></i></div>
+          </div>
+          <div class="project-info">
+            <span class="project-tag">HTML · CSS · JS</span>
+            <h3 class="project-title">Responsive Web Pages</h3>
+            <p class="project-desc">
+              Designed and built static responsive web pages with modern layouts, animations, and clean UI.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/moizdheela" target="_blank" class="btn btn-sm btn-ghost">
+                <i class="fa-brands fa-github"></i> GitHub
+              </a>
+              <a href="#" class="btn btn-sm btn-outline">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card glass reveal">
+          <div class="project-img-wrap">
+            <img src="assets/project3.png" alt="Project 3" class="project-img" onerror="this.parentElement.classList.add('no-img')" />
+            <div class="project-img-placeholder"><i class="fa-solid fa-database"></i></div>
+          </div>
+          <div class="project-info">
+            <span class="project-tag">SQL</span>
+            <h3 class="project-title">SQL Query Practice</h3>
+            <p class="project-desc">
+              Practiced complex SQL queries — joins, subqueries, filtering, aggregations, and database design.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/moizdheela" target="_blank" class="btn btn-sm btn-ghost">
+                <i class="fa-brands fa-github"></i> GitHub
+              </a>
+              <a href="#" class="btn btn-sm btn-outline">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ADD MORE PROJECTS HERE — copy any .project-card block above -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== JOURNEY ======================== -->
+  <section class="section journey" id="journey">
+    <div class="container">
+      <div class="section-label reveal">04 — Journey</div>
+      <h2 class="section-title reveal">My Timeline</h2>
+      <div class="timeline">
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass">
+            <span class="timeline-year">2024</span>
+            <h3>Started B.Tech CSE</h3>
+            <p>Joined Karnavati University, Gandhinagar. Began my journey into computer science.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass">
+            <span class="timeline-year">2024</span>
+            <h3>Web Development</h3>
+            <p>Learned HTML, CSS, JavaScript. Built first responsive web pages and understood the foundations of the web.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass">
+            <span class="timeline-year">2025</span>
+            <h3>Python & SQL</h3>
+            <p>Earned Python Developer & SQL certifications. Built automation scripts and practiced database operations.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass">
+            <span class="timeline-year">2025</span>
+            <h3>Exploring AI</h3>
+            <p>Diving deep into Artificial Intelligence and Machine Learning — fascinated by how it's reshaping the world.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot pulse-dot"></div>
+          <div class="timeline-card glass active-card">
+            <span class="timeline-year">Now</span>
+            <h3>Full Stack & DSA <span class="live-badge">Live</span></h3>
+            <p>Learning backend development, mastering Data Structures & Algorithms, and working on real-world projects.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== CONTACT ======================== -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="section-label reveal">05 — Contact</div>
+      <h2 class="section-title reveal">Get In Touch</h2>
+      <p class="section-sub reveal">Have a project, opportunity, or just want to say hi? My inbox is open.</p>
+      <div class="contact-grid">
+
+        <div class="contact-info reveal">
+          <div class="contact-item glass">
+            <i class="fa-solid fa-envelope"></i>
+            <div>
+              <span>Email</span>
+              <a href="mailto:moizd231@gmail.com">moizd231@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-item glass">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>
+              <span>Location</span>
+              <a>Gandhinagar, Gujarat</a>
+            </div>
+          </div>
+          <div class="contact-item glass">
+            <i class="fa-solid fa-phone"></i>
+            <div>
+              <span>Phone</span>
+              <a href="tel:+919313846266">+91 9313846266</a>
+            </div>
+          </div>
+          <!-- Social links -->
+          <div class="social-links">
+            <a href="https://github.com/MoizD53" target="_blank" class="social-link" aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/moiz-dheela-7829bb31b/" target="_blank" class="social-link" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://instagram.com/moizdheela" target="_blank" class="social-link" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="mailto:moizd231@gmail.com" class="social-link" aria-label="Email">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- CONTACT FORM — uses FormSubmit (no backend needed) -->
+        <!-- Replace YOUR_EMAIL below with your actual email address -->
+        <form
+          class="contact-form glass reveal"
+          action="https://formsubmit.co/moizd231@gmail.com"
+          method="POST"
+          id="contactForm"
+        >
+          <!-- FormSubmit hidden config -->
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_next" value="https://yourportfolio.com/thanks.html" />
+          <input type="hidden" name="_subject" value="Portfolio Contact Form Message" />
+
+          <div class="form-group">
+            <label for="name">Moiz Dheela</label>
+            <input type="text" id="name" name="name" placeholder="John Doe" required />
+          </div>
+          <div class="form-group">
+            <label for="email">moizd231@gmail.com</label>
+            <input type="email" id="email" name="email" placeholder="john@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Hey Moiz, I'd love to connect..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            <i class="fa-solid fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== FOOTER ======================== -->
+  <footer class="footer">
+    <div class="container">
+      <p>Designed &amp; built by <span class="highlight">Moiz Dheela</span> · 2025</p>
+      <p class="footer-sub">Made with <span class="heart">♥</span> in Gandhinagar</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
