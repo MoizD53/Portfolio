@@ -19,6 +19,39 @@
   --glow-md: 0 0 25px rgba(0, 212, 255, 0.45), 0 0 60px rgba(0, 212, 255, 0.15);
   --glow-lg: 0 0 40px rgba(0, 212, 255, 0.6), 0 0 100px rgba(0, 212, 255, 0.2);
 }
+:root{
+
+  --bg-primary: #050816;
+  --bg-secondary: #0b1023;
+
+  --text-primary: #ffffff;
+  --text-secondary: #bdbdbd;
+
+  --accent: #00d4ff;
+
+  --card-bg: rgba(255,255,255,0.05);
+
+  --border: rgba(255,255,255,0.08);
+
+}
+
+/* LIGHT MODE */
+
+.light-mode{
+
+  --bg-primary: #f5f7ff;
+  --bg-secondary: #ffffff;
+
+  --text-primary: #111111;
+  --text-secondary: #444444;
+
+  --accent: #0066ff;
+
+  --card-bg: rgba(255,255,255,0.75);
+
+  --border: rgba(0,0,0,0.08);
+
+}
 
 /* ─── RESET & BASE ──────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -526,13 +559,15 @@ ul { list-style: none; }
 }
 
 /* ─── GLASS CARD ────────────────────────────────────────── */
-.glass {
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-radius: 16px;
-  transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+.glass{
+
+  background: var(--card-bg);
+
+  border: 1px solid var(--border);
+
+  backdrop-filter: blur(14px);
+
+  transition: 0.4s ease;
 }
 .glass:hover {
   border-color: rgba(0, 212, 255, 0.3);
@@ -924,8 +959,16 @@ ul { list-style: none; }
   .skill-orb { width: 64px; height: 64px; font-size: 1.4rem; }
 }
 body{
+
+  background: var(--bg-primary);
+
+  color: var(--text-primary);
+
+  transition:
+    background 0.4s ease,
+    color 0.4s ease;
+
   overflow-x: hidden;
-  background: #050816;
 }
 
 /* ================= HERO ================= */
@@ -1283,4 +1326,38 @@ body{
     grid-template-columns: 1fr;
   }
 
+}
+
+/* ================= THEME TOGGLE ================= */
+
+.theme-toggle{
+
+  width: 50px;
+  height: 50px;
+
+  border-radius: 50%;
+
+  border: none;
+
+  cursor: pointer;
+
+  background: var(--card-bg);
+
+  color: var(--text-primary);
+
+  font-size: 1.1rem;
+
+  backdrop-filter: blur(10px);
+
+  border: 1px solid var(--border);
+
+  transition: 0.4s ease;
+}
+
+.theme-toggle:hover{
+
+  transform: rotate(180deg) scale(1.1);
+
+  box-shadow:
+    0 0 20px rgba(0,212,255,0.35);
 }

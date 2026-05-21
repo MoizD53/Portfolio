@@ -312,3 +312,40 @@ if (navLogo) {
 
 console.log('%c🚀 Moiz Dheela Portfolio', 'color:#00d4ff; font-size:1.2rem; font-weight:bold;');
 console.log('%c Built with HTML · CSS · JS', 'color:#00ffcc; font-size:0.85rem;');
+
+/* ================= THEME TOGGLE ================= */
+
+const themeToggle = document.getElementById("themeToggle");
+
+themeToggle.addEventListener("click", () => {
+
+  document.body.classList.toggle("light-mode");
+
+  if(document.body.classList.contains("light-mode")){
+
+    localStorage.setItem("theme","light");
+
+    themeToggle.innerHTML =
+      '<i class="fa-solid fa-sun"></i>';
+
+  }else{
+
+    localStorage.setItem("theme","dark");
+
+    themeToggle.innerHTML =
+      '<i class="fa-solid fa-moon"></i>';
+
+  }
+
+});
+
+/* SAVE THEME */
+
+if(localStorage.getItem("theme") === "light"){
+
+  document.body.classList.add("light-mode");
+
+  themeToggle.innerHTML =
+    '<i class="fa-solid fa-sun"></i>';
+
+}
