@@ -191,33 +191,38 @@ ul { list-style: none; }
 }
 
 .logo-wrapper{
+
   position: relative;
 
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
 
   display: flex;
   align-items: center;
   justify-content: center;
+
 }
 
 .nav-logo-img{
 
-  width: 62px;
-  height: 62px;
+  width: 72px;
+  height: 72px;
 
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
 
   border-radius: 50%;
 
-  z-index: 2;
+  padding: 8px;
 
-  border: 3px solid rgba(255,255,255,0.15);
+  background: #050816;
+
+  z-index: 2;
 
   box-shadow:
     0 0 15px rgba(0,212,255,0.4),
     0 0 40px rgba(0,212,255,0.25);
+
 }
 
 /* ROTATING RING */
@@ -226,18 +231,20 @@ ul { list-style: none; }
 
   position: absolute;
 
-  width: 78px;
-  height: 78px;
+  width: 90px;
+  height: 90px;
 
   border-radius: 50%;
 
   border-top: 3px solid #00d4ff;
+  border-right: 3px solid transparent;
   border-bottom: 3px solid #7a5cff;
+  border-left: 3px solid transparent;
 
-  animation: rotateRing 3s linear infinite;
+  animation: rotateRing 2.5s linear infinite;
 
   box-shadow:
-    0 0 20px rgba(0,212,255,0.5);
+    0 0 25px rgba(0,212,255,0.45);
 
 }
 
