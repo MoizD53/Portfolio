@@ -1390,7 +1390,7 @@ box-shadow: var(--shadow);
 
   border-top-color: #ffffff;
 
-  animation: rotateStartup 1.2s linear infinite;
+  animation: rotateStartup 0.8s linear infinite;
 }
 
 /* SECOND RING */
@@ -1409,7 +1409,7 @@ box-shadow: var(--shadow);
 
   border-right-color: rgba(255,255,255,0.5);
 
-  animation: rotateStartupReverse 2s linear infinite;
+  animation: rotateStartupReverse 1s linear infinite;
 }
 
 /* THIRD RING */
@@ -1428,7 +1428,7 @@ box-shadow: var(--shadow);
 
   border-bottom-color: rgba(255,255,255,0.3);
 
-  animation: rotateStartup 3s linear infinite;
+  animation: rotateStartup 2s linear infinite;
 }
 
 /* ANIMATION */
@@ -1498,7 +1498,7 @@ box-shadow: var(--shadow);
 
   border-top-color: #ffffff;
 
-  animation: navbarRotate 6s linear infinite;
+  animation: navbarRotate 5s linear infinite;
 }
 
 /* INNER SOFT RING */
@@ -1574,7 +1574,7 @@ box-shadow: var(--shadow);
 
   border-top-color: #ffffff;
 
-  animation: navbarRotate 6s linear infinite;
+  animation: navbarRotate 5s linear infinite;
 }
 
 /* INNER SOFT RING */
