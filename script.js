@@ -4,28 +4,43 @@
    ============================================================ */
 
 /* ─── LOADER ────────────────────────────────────────────── */
-const loader = document.getElementById('loader');
-const loaderBar = document.getElementById('loaderBar');
+/* ─── PREMIUM PAGE LOADER ───────────────────────────────── */
 
-let progress = 0;
-const loaderInterval = setInterval(() => {
-  progress += Math.random() * 18 + 4;
-  if (progress >= 100) {
-    progress = 100;
-    loaderBar.style.width = '100%';
-    clearInterval(loaderInterval);
-    setTimeout(() => {
-      loader.classList.add('hidden');
-      // Trigger hero animations after loader hides
-      document.querySelectorAll('.hero .reveal').forEach(el => {
+window.addEventListener("load", () => {
+
+  const loader =
+    document.getElementById("loader");
+
+  // Start hero animations after loader hides
+  function startPortfolio() {
+
+    document
+      .querySelectorAll('.hero .reveal')
+      .forEach(el => {
         el.classList.add('visible');
       });
-      startTyping();
-    }, 500);
-  } else {
-    loaderBar.style.width = progress + '%';
+
+    startTyping();
   }
-}, 80);
+
+  // Hide loader smoothly
+  setTimeout(() => {
+
+    loader.style.opacity = "0";
+
+    loader.style.pointerEvents = "none";
+
+    setTimeout(() => {
+
+      loader.style.display = "none";
+
+      startPortfolio();
+
+    }, 600);
+
+  }, 2200);
+
+});
 
 /* ─── CUSTOM CURSOR ─────────────────────────────────────── */
 const cursorDot = document.getElementById('cursorDot');
@@ -244,7 +259,7 @@ window.addEventListener('scroll', () => {
   navLinkItems.forEach(link => {
     link.style.color = '';
     if (link.getAttribute('href') === '#' + current) {
-      link.style.color = 'var(--neon-blue)';
+      link.style.color = '#ffffff';
     }
   });
 });
@@ -310,8 +325,8 @@ if (navLogo) {
   });
 }
 
-console.log('%c🚀 Moiz Dheela Portfolio', 'color:#00d4ff; font-size:1.2rem; font-weight:bold;');
-console.log('%c Built with HTML · CSS · JS', 'color:#00ffcc; font-size:0.85rem;');
+console.log('%c🚀 Moiz Dheela Portfolio', 'color:#ffffff; font-size:1.2rem; font-weight:bold;');
+console.log('%c Built with HTML · CSS · JS', 'color:#d4d4d8; font-size:0.85rem;');
 
 /* ================= THEME TOGGLE ================= */
 
