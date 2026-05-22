@@ -2,7 +2,34 @@
    MOIZ DHEELA — PORTFOLIO JAVASCRIPT
    Loader · Cursor · Particles · Typing · Scroll Animations
    ============================================================ */
+/* ================= PAGE LOADER FIX ================= */
 
+window.addEventListener("load", () => {
+
+  const loader =
+    document.getElementById("loader");
+
+  // safety check
+  if (!loader) return;
+
+  // hide after animation
+  setTimeout(() => {
+
+    loader.style.opacity = "0";
+
+    loader.style.visibility = "hidden";
+
+    loader.style.pointerEvents = "none";
+
+    setTimeout(() => {
+
+      loader.remove();
+
+    }, 700);
+
+  }, 2200);
+
+});
 /* ─── LOADER ────────────────────────────────────────────── */
 /* ─── PREMIUM PAGE LOADER ───────────────────────────────── */
 
