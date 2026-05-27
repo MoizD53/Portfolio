@@ -1533,3 +1533,45 @@ ul { list-style: none; }
 .tl-card:hover::before{
   opacity:1;
 }
+
+/* ═════════ INPUT FIX ═════════ */
+
+.contact-form input,
+.contact-form textarea{
+
+  width:100%;
+
+  background:transparent !important;
+
+  color:#000 !important;
+
+  border:none;
+  outline:none;
+
+  font-size:16px;
+
+  padding-left:52px;
+
+  font-family:inherit;
+}
+
+/* autofill fix */
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill{
+
+  -webkit-text-fill-color:#fff !important;
+
+  transition: background-color 9999s ease-in-out 0s;
+
+  box-shadow: 0 0 0px 1000px transparent inset !important;
+}
+
+/* placeholder */
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder{
+  color:#7f8ca5;
+}
