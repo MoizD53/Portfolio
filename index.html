@@ -3,480 +3,603 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Moiz Dheela — Developer Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <!-- Google Fonts -->
+  <title>Moiz Dheela — AI Engineer & Future Founder</title>
+  <meta name="description" content="Moiz Dheela — AI-focused software engineer, full stack developer, and future startup founder from India." />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
-  <!-- Font Awesome for icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- ======================== CUSTOM CURSOR ======================== -->
+  <!-- CURSOR -->
   <div class="cursor-dot" id="cursorDot"></div>
   <div class="cursor-ring" id="cursorRing"></div>
 
-  <!-- ======================== LOADER ======================== -->
-  <!-- ======================== LOADER ======================== -->
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress" id="scrollProgress"></div>
 
-<!-- ======================== PAGE LOADER ======================== -->
+  <!-- SPOTLIGHT -->
+  <div class="spotlight" id="spotlight"></div>
 
-<div class="page-loader" id="loader">
-
-  <div class="startup-loader">
-
-    <img
-      src="./assets/logo.jpeg"
-      alt="Moiz Loader"
-      class="startup-loader-img"
-    />
-
-    <div class="startup-ring"></div>
-
+  <!-- PAGE LOADER -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-ring-wrap">
+        <svg class="loader-svg" viewBox="0 0 120 120">
+          <circle class="loader-track" cx="60" cy="60" r="54"/>
+          <circle class="loader-arc" cx="60" cy="60" r="54" id="loaderArc"/>
+        </svg>
+        <div class="loader-center">
+          <span class="loader-initials">MD</span>
+        </div>
+      </div>
+      <div class="loader-label">
+        <span class="loader-name-text">MOIZ DHEELA</span>
+        <span class="loader-status" id="loaderStatus">Initializing Systems</span>
+      </div>
+      <div class="loader-progress-wrap">
+        <div class="loader-progress-bar" id="loaderProgress"></div>
+        <span class="loader-pct" id="loaderPct">0%</span>
+      </div>
+    </div>
   </div>
 
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a href="#hero" class="nav-logo">
+      <span class="nav-logo-letters">MD</span>
+      <span class="nav-logo-dot"></span>
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about" class="nav-link" data-label="About">About</a></li>
+      <li><a href="#skills" class="nav-link" data-label="Skills">Skills</a></li>
+      <li><a href="#projects" class="nav-link" data-label="Projects">Projects</a></li>
+      <li><a href="#journey" class="nav-link" data-label="Journey">Journey</a></li>
+      <li><a href="#contact" class="nav-link" data-label="Contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <a href="assets/resume.pdf" target="_blank" class="nav-resume">
+        <span>Resume</span>
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about" class="mm-link">About</a></li>
+      <li><a href="#skills" class="mm-link">Skills</a></li>
+      <li><a href="#projects" class="mm-link">Projects</a></li>
+      <li><a href="#journey" class="mm-link">Journey</a></li>
+      <li><a href="#contact" class="mm-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- ══════════════════ HERO ══════════════════ -->
+  <section class="hero" id="hero">
+    <!-- Three.js canvas -->
+    <canvas id="heroCanvas"></canvas>
+
+    <!-- Grid overlay -->
+    <div class="hero-grid"></div>
+
+    <!-- Gradient orbs -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <div class="hero-inner">
+      <!-- LEFT -->
+      <div class="hero-left" id="heroLeft">
+
+        <div class="hero-available">
+          <span class="pulse-dot"></span>
+          Available for opportunities
+        </div>
+
+        <h1 class="hero-name" id="heroName">
+          <div class="name-line" id="nameLine1">MOIZ</div>
+          <div class="name-line accent-line" id="nameLine2">DHEELA</div>
+        </h1>
+
+        <div class="hero-role">
+          <span class="role-bracket">&lt;</span>
+          <span class="typed" id="typed"></span>
+          <span class="blink-cursor">_</span>
+          <span class="role-bracket">/&gt;</span>
+        </div>
+
+        <p class="hero-bio" id="heroBio">
+          Building intelligent digital experiences powered by<br>
+          <strong>AI, design, and modern engineering.</strong>
+        </p>
+
+        <div class="hero-actions" id="heroActions">
+          <a href="#projects" class="btn-primary">
+            <span>View Work</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#contact" class="btn-ghost">Contact Me</a>
+          <a href="assets/resume.pdf" target="_blank" class="btn-outline">
+            <i class="fa-solid fa-file-lines"></i> Resume
+          </a>
+        </div>
+
+        <div class="hero-socials" id="heroSocials">
+          <div class="social-line"></div>
+          <a href="https://github.com/MoizD53" target="_blank" class="social-icon" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/moiz-dheela-7829bb31b/" target="_blank" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://instagram.com/moizdheela" target="_blank" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="mailto:moizd231@gmail.com" class="social-icon" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+
+      <!-- RIGHT — Avatar Scene -->
+      <div class="hero-right" id="heroRight">
+        <div class="avatar-scene" id="avatarScene">
+
+          <!-- Rotating rings -->
+          <div class="ring ring-outer"></div>
+          <div class="ring ring-mid"></div>
+          <div class="ring ring-inner"></div>
+
+          <!-- Holographic grid -->
+          <div class="holo-grid"></div>
+
+          <!-- Main avatar frame -->
+          <div class="avatar-frame" id="avatarFrame">
+            <!-- SVG illustrated avatar -->
+              <div class="avatar-art">
+
+  <!-- YOUR IMAGE -->
+  <img src="assets/moiz.jpeg" alt="Moiz Dheela" class="real-avatar">
+
+  <!-- overlay -->
+  <div class="avatar-overlay"></div>
+
 </div>
 
-<!-- ======================== NAV ======================== -->
-<nav class="nav" id="nav">
+            <div class="avatar-glow-halo"></div>
+            <div class="avatar-scan-line" id="scanLine"></div>
+          </div>
 
-<a href="#hero" class="nav-logo">
+          <!-- Floating data chips -->
+          <div class="data-chip chip-1">
+            <i class="fa-solid fa-microchip"></i>
+            <div>
+              <div class="chip-label">Specialization</div>
+              <div class="chip-value">AI Engineer</div>
+            </div>
+          </div>
+          <div class="data-chip chip-2">
+            <i class="fa-solid fa-code"></i>
+            <div>
+              <div class="chip-label">Stack</div>
+              <div class="chip-value">Full Stack</div>
+            </div>
+          </div>
+          <div class="data-chip chip-3">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <div>
+              <div class="chip-label">Degree</div>
+              <div class="chip-value">B.Tech CSE</div>
+            </div>
+          </div>
+          <div class="data-chip chip-4">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>
+              <div class="chip-label">Location</div>
+              <div class="chip-value">India 🇮🇳</div>
+            </div>
+          </div>
 
-  <div class="logo-wrapper">
-
-  <img
-    src="./assets/logo2.jpeg"
-    alt="Moiz Logo"
-    class="nav-logo-img"
-  />
-
-  <div class="navbar-ring"></div>
-
-</div>
-
-</a>
-
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#journey">Journey</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-
-  <button class="theme-toggle" id="themeToggle">
-
-  <i class="fa-solid fa-moon"></i>
-
-  </button>
-
-  <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
-
-</nav>
-
-  <!-- ======================== HERO ======================== -->
-<section class="hero" id="hero">
-
-  <canvas id="particleCanvas"></canvas>
-
-  <div class="hero-content">
-
-    <p class="hero-greeting reveal">
-      Hey there, I'm
-    </p>
-
-    <h1 class="hero-name reveal">
-      Moiz<br />
-      <span class="hero-name-accent">Dheela</span>
-    </h1>
-
-    <p class="hero-role reveal">
-      <span class="typed-text" id="typedText"></span>
-      <span class="typing-cursor">|</span>
-    </p>
-
-    <p class="hero-desc reveal">
-      3rd Year CSE Student · Karnavati University · Gandhinagar
-      <br />
-      Passionate about AI, Full Stack Dev & Building Cool Stuff.
-    </p>
-
-    <div class="hero-btns reveal">
-
-      <a href="#projects" class="btn btn-primary">
-        View Projects
-      </a>
-
-      <a href="#contact" class="btn btn-ghost">
-        Contact Me
-      </a>
-
-<a
-  href="assets/resume.pdf"
-  target="_blank"
-  class="btn btn-outline"
->
-  <i class="fa-solid fa-download"></i>
-  Resume
-</a>
-
+          <!-- Floating particles -->
+        </div>
+      </div>
     </div>
 
-  </div>
+  </section>
 
-  <div class="shape shape-1"></div>
-  <div class="shape shape-2"></div>
-  <div class="shape shape-3"></div>
-
-</section>
-  <!-- ======================== ABOUT ======================== -->
-  <section class="section about" id="about">
+  <!-- ══════════════════ ABOUT ══════════════════ -->
+  <section class="section about-section" id="about">
+    <div class="section-glow glow-left"></div>
     <div class="container">
-      <div class="section-label reveal">About</div>
-      <h2 class="section-title reveal">Who I Am</h2>
+      <div class="section-eyebrow" data-aos="fade-up">— About Me</div>
+      <h2 class="section-heading" data-aos="fade-up" data-aos-delay="80">
+        The Mind Behind<br><span class="text-accent">The Machine</span>
+      </h2>
+
       <div class="about-grid">
-        <div class="about-text reveal">
-          <p>
-            I'm <strong>Moiz Dheela</strong>, a Computer Science Engineering student at
-            Karnavati University with a deep passion for building things that live on the internet.
-          </p>
-          <p>
-            I thrive at the intersection of <span class="highlight">AI</span>,
-            <span class="highlight">Full Stack Development</span>, and
-            <span class="highlight">clean, purposeful design</span>. Currently sharpening my
-            skills in DSA, backend systems, and exploring how machine learning reshapes the web.
-          </p>
-          <p>
-            When I'm not coding, I'm reading about emerging tech, experimenting with side projects,
-            or figuring out how to break things in the most productive way possible.
-          </p>
+        <!-- Terminal card -->
+        <div class="terminal-card" data-aos="fade-right" data-aos-delay="150">
+          <div class="terminal-bar">
+            <div class="t-dots">
+              <span class="td red"></span>
+              <span class="td yellow"></span>
+              <span class="td green"></span>
+            </div>
+            <span class="t-title">moiz@terminal ~ %</span>
+          </div>
+          <div class="terminal-body">
+            <div class="t-line"><span class="t-cmd">$ whoami</span></div>
+            <div class="t-line t-out">Moiz Dheela — AI Engineer</div>
+            <div class="t-line"><span class="t-cmd">$ location</span></div>
+            <div class="t-line t-out">Gandhinagar, Gujarat 🇮🇳</div>
+            <div class="t-line"><span class="t-cmd">$ university</span></div>
+            <div class="t-line t-out">Karnavati University — B.Tech CSE</div>
+            <div class="t-line"><span class="t-cmd">$ passion</span></div>
+            <div class="t-line t-out">AI-powered products that matter</div>
+            <div class="t-line"><span class="t-cmd">$ status</span></div>
+            <div class="t-line t-green">✓ Available for opportunities</div>
+            <div class="t-line"><span class="t-cmd">$ goal</span></div>
+            <div class="t-line t-out">Startup founder in the making...</div>
+            <div class="t-line"><span class="t-cmd">$ <span class="t-cursor-blink">█</span></span></div>
+          </div>
         </div>
-        <div class="about-cards reveal">
-          <div class="about-card glass">
-            <div class="about-card-icon"><i class="fa-solid fa-code"></i></div>
-            <h3>Developer</h3>
-            <p>Building web apps with modern tools and clean architecture.</p>
+
+        <!-- Story + stats -->
+        <div class="about-story" data-aos="fade-left" data-aos-delay="200">
+          <p class="about-text">
+            I'm a <strong>Computer Science student at Karnavati University</strong> with an obsession for building things at the intersection of AI and the web. My journey started with curiosity — it's evolved into a mission to become a <span class="hl">tech founder who ships products that matter.</span>
+          </p>
+          <p class="about-text">
+            I thrive on complexity. Neural networks, backend systems, pixel-perfect UI — I go deep. Currently mastering <span class="hl">AI/ML, full stack dev, and DSA</span> to build a foundation that no one can shake.
+          </p>
+          <p class="about-text">
+            The dream? <span class="hl">Build a startup from India that changes the game globally.</span> Every line of code today is practice for that moment.
+          </p>
+
+          <div class="stats-grid">
+            <div class="stat-box" data-aos="zoom-in" data-aos-delay="300">
+              <span class="stat-num" data-target="5">0</span><span class="stat-suf">+</span>
+              <span class="stat-lbl">Projects Built</span>
+            </div>
+            <div class="stat-box" data-aos="zoom-in" data-aos-delay="380">
+              <span class="stat-num" data-target="300">0</span><span class="stat-suf">+</span>
+              <span class="stat-lbl">GitHub Commits</span>
+            </div>
+            <div class="stat-box" data-aos="zoom-in" data-aos-delay="460">
+              <span class="stat-num" data-target="8">0</span><span class="stat-suf">+</span>
+              <span class="stat-lbl">Technologies</span>
+            </div>
+            <div class="stat-box" data-aos="zoom-in" data-aos-delay="540">
+              <span class="stat-num" data-target="500">0</span><span class="stat-suf">+</span>
+              <span class="stat-lbl">Coding Hours</span>
+            </div>
           </div>
-          <div class="about-card glass">
-            <div class="about-card-icon"><i class="fa-solid fa-brain"></i></div>
-            <h3>AI Enthusiast</h3>
-            <p>Fascinated by machine learning and intelligent systems.</p>
-          </div>
-          <div class="about-card glass">
-            <div class="about-card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-            <h3>Student</h3>
-            <p>3rd Year B.Tech CSE — Karnavati University, Gandhinagar.</p>
-          </div>
-          <div class="about-card glass">
-            <div class="about-card-icon"><i class="fa-solid fa-rocket"></i></div>
-            <h3>Builder</h3>
-            <p>Always working on something new, always learning.</p>
+
+          <div class="tags-row">
+            <span class="tag">🤖 AI/ML</span>
+            <span class="tag">⚡ Full Stack</span>
+            <span class="tag">🧠 DSA</span>
+            <span class="tag">🚀 Startup</span>
+            <span class="tag">🎨 UI/UX</span>
+            <span class="tag">☁️ Cloud</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ======================== DEV EXTRA SECTION ======================== -->
+  <!-- ══════════════════ SKILLS ══════════════════ -->
+  <section class="section skills-section" id="skills">
+    <div class="section-glow glow-right"></div>
+    <div class="container">
+      <div class="section-eyebrow" data-aos="fade-up">— Tech Stack</div>
+      <h2 class="section-heading" data-aos="fade-up" data-aos-delay="80">
+        Tools I Wield With<br><span class="text-accent">Precision</span>
+      </h2>
+      <p class="section-sub" data-aos="fade-up" data-aos-delay="120">Technologies I master to build the future.</p>
 
-<section class="section extras" id="extras">
-
-  <div class="container">
-
-    <!-- TERMINAL -->
-
-    <div class="terminal-box glass reveal">
-
-      <div class="terminal-header">
-        <span class="dot red"></span>
-        <span class="dot yellow"></span>
-        <span class="dot green"></span>
+      <div class="skills-orbit" id="skillsOrbit">
+        <!-- Rendered by JS -->
       </div>
 
-      <div class="terminal-body">
+      <div class="project-showcase">
 
-<pre>
-> who am i
-Moiz Dheela
+  <!-- Project 1 -->
+  <div class="pro-case glass-card">
 
-> role
-Full Stack Developer
-
-> university
-Karnavati University, Gandhinagar
-
-> currently
-Building futuristic web experiences
-
-> learning
-AI + Backend + DSA
-
-> status
-Available for opportunities
-</pre>
-
-      </div>
-
+    <div class="pro-top">
+      <span class="pro-tag">AI / ML</span>
+      <span class="pro-year">2025</span>
     </div>
 
-    <!-- GRID -->
+    <h3>AI Learning & Experiments</h3>
 
-    <div class="extras-grid">
+    <p>
+      Exploring neural networks, machine learning concepts,
+      and AI integrations while building intelligent systems
+      focused on real-world applications.
+    </p>
 
-      <!-- CERTIFICATIONS -->
+    <div class="pro-stack">
+      <span>Python</span>
+      <span>TensorFlow</span>
+      <span>Machine Learning</span>
+    </div>
 
-      <div class="extra-card glass reveal">
-
-        <h3>Certifications</h3>
-
-        <ul>
-          <li>Python Development</li>
-          <li>SQL & Database Fundamentals</li>
-          <li>Frontend Web Development</li>
-          <li>Linux Basics</li>
-        </ul>
-
+    <div class="pro-bottom">
+      <div class="pro-stat">
+        <strong>10+</strong>
+        <span>Experiments</span>
       </div>
 
-      <!-- CURRENTLY LEARNING -->
-
-      <div class="extra-card glass reveal">
-
-        <h3>Currently Learning</h3>
-
-        <ul>
-          <li>Backend Development</li>
-          <li>AI Integrations</li>
-          <li>Advanced JavaScript</li>
-          <li>Data Structures & Algorithms</li>
-        </ul>
-
-      </div>
-
-      <!-- AVAILABLE FOR -->
-
-      <div class="extra-card glass reveal">
-
-        <h3>Available For</h3>
-
-        <ul>
-          <li>Internships</li>
-          <li>Freelance Projects</li>
-          <li>Startup Collaborations</li>
-          <li>Remote Opportunities</li>
-        </ul>
-
-      </div>
-
+      <a href="https://github.com/MoizD53" target="_blank" class="pro-link">
+        View Project
+      </a>
     </div>
 
   </div>
 
-</section>
+  <!-- Project 2 -->
+  <div class="pro-case glass-card">
 
-  <!-- ======================== SKILLS ======================== -->
-  <section class="section skills" id="skills">
-    <div class="container">
-      <div class="section-label reveal">Skills</div>
-      <h2 class="section-title reveal">Tech Stack</h2>
-      <p class="section-sub reveal">Technologies I work with and love.</p>
-      <div class="skills-grid">
-        <!-- Each skill ball -->
-        <div class="skill-ball reveal" data-skill="HTML5">
-          <div class="skill-orb">
-            <i class="fa-brands fa-html5"></i>
-          </div>
-          <span>HTML5</span>
-        </div>
-        <div class="skill-ball reveal" data-skill="CSS3">
-          <div class="skill-orb">
-            <i class="fa-brands fa-css3-alt"></i>
-          </div>
-          <span>CSS3</span>
-        </div>
-        <div class="skill-ball reveal" data-skill="JavaScript">
-          <div class="skill-orb">
-            <i class="fa-brands fa-js"></i>
-          </div>
-          <span>JavaScript</span>
-        </div>
-        <div class="skill-ball reveal" data-skill="Node.js">
-          <div class="skill-orb">
-            <i class="fa-brands fa-node-js"></i>
-          </div>
-          <span>Node.js</span>
-        </div>
-        <div class="skill-ball reveal" data-skill="React">
-          <div class="skill-orb">
-            <i class="fa-brands fa-react"></i>
-          </div>
-          <span>React</span>
-        </div>
-        <div class="skill-ball reveal" data-skill="Python">
-          <div class="skill-orb">
-            <i class="fa-brands fa-python"></i>
-          </div>
-          <span>Python</span>
-        </div>
-        <div class="skill-ball reveal" data-skill="C">
-          <div class="skill-orb skill-text-orb">C</div>
-          <span>C</span>
-        </div>
-        <div class="skill-ball reveal" data-skill="C++">
-          <div class="skill-orb skill-text-orb">C++</div>
-          <span>C++</span>
-        </div>
-        <div class="skill-ball reveal" data-skill="Linux">
-          <div class="skill-orb">
-            <i class="fa-brands fa-linux"></i>
-          </div>
-          <span>Linux</span>
-        </div>
-        <div class="skill-ball reveal" data-skill="DSA">
-          <div class="skill-orb skill-text-orb">DSA</div>
-          <span>DSA</span>
-        </div>
+    <div class="pro-top">
+      <span class="pro-tag">FULL STACK</span>
+      <span class="pro-year">2025</span>
+    </div>
+
+    <h3>Modern Portfolio System</h3>
+
+    <p>
+      Designed and engineered a futuristic cinematic portfolio
+      with immersive animations, holographic UI,
+      AI-inspired interactions, and responsive design.
+    </p>
+
+    <div class="pro-stack">
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JavaScript</span>
+    </div>
+
+    <div class="pro-bottom">
+      <div class="pro-stat">
+        <strong>100%</strong>
+        <span>Responsive</span>
       </div>
+
+      <a href="#" class="pro-link">
+        Live Demo
+      </a>
+    </div>
+
+  </div>
+
+  <!-- Project 3 -->
+  <div class="pro-case glass-card">
+
+    <div class="pro-top">
+      <span class="pro-tag">BACKEND</span>
+      <span class="pro-year">2025</span>
+    </div>
+
+    <h3>Python Automation Tools</h3>
+
+    <p>
+      Built automation scripts for productivity,
+      data handling, and repetitive workflows
+      using efficient Python logic.
+    </p>
+
+    <div class="pro-stack">
+      <span>Python</span>
+      <span>Automation</span>
+      <span>SQL</span>
+    </div>
+
+    <div class="pro-bottom">
+      <div class="pro-stat">
+        <strong>20+</strong>
+        <span>Scripts</span>
+      </div>
+
+      <a href="https://github.com/MoizD53" target="_blank" class="pro-link">
+        GitHub
+      </a>
+    </div>
+
+  </div>
+
+</div>
+
     </div>
   </section>
 
-  <!-- ======================== PROJECTS ======================== -->
-  <section class="section projects" id="projects">
+  <!-- ══════════════════ PROJECTS ══════════════════ -->
+  <section class="section projects-section" id="projects">
     <div class="container">
-      <div class="section-label reveal">Projects</div>
-      <h2 class="section-title reveal">What I've Built</h2>
-      <p class="section-sub reveal">A collection of personal &amp; academic projects.</p>
+      <div class="section-eyebrow" data-aos="fade-up">— My Work</div>
+      <h2 class="section-heading" data-aos="fade-up" data-aos-delay="80">
+        Things I've<br><span class="text-accent">Engineered</span>
+      </h2>
+      <p class="section-sub" data-aos="fade-up" data-aos-delay="120">A curated collection of projects from exploration to execution.</p>
+
       <div class="projects-grid">
 
-        <!-- PROJECT CARD — replace image src, title, desc, and links -->
-        <div class="project-card glass reveal">
-          <!-- Replace src with your project screenshot: assets/project1.png -->
-          <div class="project-img-wrap">
-            <img src="assets/project1.png" alt="Project 1" class="project-img" onerror="this.parentElement.classList.add('no-img')" />
-            <div class="project-img-placeholder"><i class="fa-solid fa-code"></i></div>
-          </div>
-          <div class="project-info">
-            <span class="project-tag">Python</span>
-            <h3 class="project-title">Python Automation Scripts</h3>
-            <p class="project-desc">
-              A collection of Python scripts for automation tasks, data handling, and logic-building exercises.
-            </p>
-            <div class="project-links">
-              <a href="https://github.com/moizdheela" target="_blank" class="btn btn-sm btn-ghost">
-                <i class="fa-brands fa-github"></i> GitHub
-              </a>
-              <a href="#" class="btn btn-sm btn-outline">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
-              </a>
+        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-visual" style="--clr:#9b5de5">
+            <div class="project-visual-glow" style="background:radial-gradient(circle,rgba(155,93,229,0.35),transparent 70%)"></div>
+            <div class="project-icon" style="color:#9b5de5"><i class="fa-solid fa-brain"></i></div>
+            <div class="project-code-lines">
+              <span style="width:70%"></span><span style="width:85%"></span>
+              <span style="width:50%"></span><span style="width:75%"></span>
+              <span style="width:40%"></span>
             </div>
           </div>
-        </div>
-
-        <div class="project-card glass reveal">
-          <div class="project-img-wrap">
-            <img src="assets/project2.png" alt="Project 2" class="project-img" onerror="this.parentElement.classList.add('no-img')" />
-            <div class="project-img-placeholder"><i class="fa-solid fa-globe"></i></div>
-          </div>
-          <div class="project-info">
-            <span class="project-tag">HTML · CSS · JS</span>
-            <h3 class="project-title">Responsive Web Pages</h3>
-            <p class="project-desc">
-              Designed and built static responsive web pages with modern layouts, animations, and clean UI.
-            </p>
+          <div class="project-body">
+            <div class="project-stack">
+              <span class="stt">AI/ML</span><span class="stt">Python</span><span class="stt">TensorFlow</span>
+            </div>
+            <h3 class="project-name">AI/ML Experiments</h3>
+            <p class="project-desc">Exploring machine learning models, neural networks, and AI integrations — building the foundation for future intelligent products.</p>
             <div class="project-links">
-              <a href="https://github.com/moizdheela" target="_blank" class="btn btn-sm btn-ghost">
-                <i class="fa-brands fa-github"></i> GitHub
-              </a>
-              <a href="#" class="btn btn-sm btn-outline">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
-              </a>
+              <a href="https://github.com/MoizD53" target="_blank" class="plink"><i class="fa-brands fa-github"></i> GitHub</a>
+              <a href="#" class="plink plink-live"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>
             </div>
           </div>
+          <div class="card-glow-border" style="--clr:#9b5de5"></div>
         </div>
 
-        <div class="project-card glass reveal">
-          <div class="project-img-wrap">
-            <img src="assets/project3.png" alt="Project 3" class="project-img" onerror="this.parentElement.classList.add('no-img')" />
-            <div class="project-img-placeholder"><i class="fa-solid fa-database"></i></div>
-          </div>
-          <div class="project-info">
-            <span class="project-tag">SQL</span>
-            <h3 class="project-title">SQL Query Practice</h3>
-            <p class="project-desc">
-              Practiced complex SQL queries — joins, subqueries, filtering, aggregations, and database design.
-            </p>
-            <div class="project-links">
-              <a href="https://github.com/moizdheela" target="_blank" class="btn btn-sm btn-ghost">
-                <i class="fa-brands fa-github"></i> GitHub
-              </a>
-              <a href="#" class="btn btn-sm btn-outline">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
-              </a>
+        <div class="project-card" data-aos="fade-up" data-aos-delay="180">
+          <div class="project-visual" style="--clr:#00d4ff">
+            <div class="project-visual-glow" style="background:radial-gradient(circle,rgba(0,212,255,0.25),transparent 70%)"></div>
+            <div class="project-icon" style="color:#00d4ff"><i class="fa-brands fa-python"></i></div>
+            <div class="project-code-lines">
+              <span style="width:60%"></span><span style="width:90%"></span>
+              <span style="width:45%"></span><span style="width:70%"></span>
             </div>
           </div>
+          <div class="project-body">
+            <div class="project-stack">
+              <span class="stt">Python</span><span class="stt">Automation</span>
+            </div>
+            <h3 class="project-name">Python Automation Suite</h3>
+            <p class="project-desc">Collection of Python scripts for automation tasks, data handling, and logic-building exercises that solve real-world problems efficiently.</p>
+            <div class="project-links">
+              <a href="https://github.com/MoizD53" target="_blank" class="plink"><i class="fa-brands fa-github"></i> GitHub</a>
+              <a href="#" class="plink plink-live"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>
+            </div>
+          </div>
+          <div class="card-glow-border" style="--clr:#00d4ff"></div>
         </div>
 
-        <!-- ADD MORE PROJECTS HERE — copy any .project-card block above -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="260">
+          <div class="project-visual" style="--clr:#00ffcc">
+            <div class="project-visual-glow" style="background:radial-gradient(circle,rgba(0,255,204,0.2),transparent 70%)"></div>
+            <div class="project-icon" style="color:#00ffcc"><i class="fa-solid fa-globe"></i></div>
+            <div class="project-code-lines">
+              <span style="width:80%"></span><span style="width:55%"></span>
+              <span style="width:90%"></span><span style="width:65%"></span>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-stack">
+              <span class="stt">HTML</span><span class="stt">CSS</span><span class="stt">JS</span>
+            </div>
+            <h3 class="project-name">Responsive Web Pages</h3>
+            <p class="project-desc">Designed and built static responsive web pages with modern layouts, cinematic animations, and clean premium UI systems.</p>
+            <div class="project-links">
+              <a href="https://github.com/MoizD53" target="_blank" class="plink"><i class="fa-brands fa-github"></i> GitHub</a>
+              <a href="#" class="plink plink-live"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>
+            </div>
+          </div>
+          <div class="card-glow-border" style="--clr:#00ffcc"></div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up" data-aos-delay="340">
+          <div class="project-visual" style="--clr:#f59e0b">
+            <div class="project-visual-glow" style="background:radial-gradient(circle,rgba(245,158,11,0.2),transparent 70%)"></div>
+            <div class="project-icon" style="color:#f59e0b"><i class="fa-solid fa-database"></i></div>
+            <div class="project-code-lines">
+              <span style="width:75%"></span><span style="width:50%"></span>
+              <span style="width:85%"></span><span style="width:60%"></span>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-stack">
+              <span class="stt">SQL</span><span class="stt">Database</span><span class="stt">MySQL</span>
+            </div>
+            <h3 class="project-name">SQL Query Mastery</h3>
+            <p class="project-desc">Practiced complex SQL queries — joins, subqueries, filtering, aggregations, and advanced database design patterns for real applications.</p>
+            <div class="project-links">
+              <a href="https://github.com/MoizD53" target="_blank" class="plink"><i class="fa-brands fa-github"></i> GitHub</a>
+              <a href="#" class="plink plink-live"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>
+            </div>
+          </div>
+          <div class="card-glow-border" style="--clr:#f59e0b"></div>
+        </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ======================== JOURNEY ======================== -->
-  <section class="section journey" id="journey">
+  <!-- ══════════════════ JOURNEY ══════════════════ -->
+  <section class="section journey-section" id="journey">
+    <div class="section-glow glow-left"></div>
     <div class="container">
-      <div class="section-label reveal">Journey</div>
-      <h2 class="section-title reveal">My Timeline</h2>
+      <div class="section-eyebrow" data-aos="fade-up">— My Journey</div>
+      <h2 class="section-heading" data-aos="fade-up" data-aos-delay="80">
+        The Path I've<br><span class="text-accent">Walked</span>
+      </h2>
+
       <div class="timeline">
+        <div class="timeline-spine" id="timelineSpine"></div>
 
-        <div class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card glass">
-            <span class="timeline-year">2024</span>
+        <div class="timeline-item tl-right" data-aos="fade-left" data-aos-delay="100">
+          <div class="tl-node">
+            <div class="tl-node-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="tl-pulse"></div>
+          </div>
+          <div class="tl-card glass-card">
+            <span class="tl-year">2024</span>
             <h3>Started B.Tech CSE</h3>
-            <p>Joined Karnavati University, Gandhinagar. Began my journey into computer science.</p>
+            <p>Joined Karnavati University. Began my journey into computer science with full commitment and ambition to build something meaningful.</p>
           </div>
         </div>
 
-        <div class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card glass">
-            <span class="timeline-year">2024</span>
+        <div class="timeline-item tl-left" data-aos="fade-right" data-aos-delay="200">
+          <div class="tl-node">
+            <div class="tl-node-icon"><i class="fa-brands fa-html5"></i></div>
+            <div class="tl-pulse"></div>
+          </div>
+          <div class="tl-card glass-card">
+            <span class="tl-year">2024</span>
             <h3>Web Development</h3>
-            <p>Learned HTML, CSS, JavaScript. Built first responsive web pages and understood the foundations of the web.</p>
+            <p>Mastered HTML, CSS, JavaScript. Built first responsive web pages and understood the foundations of modern web engineering.</p>
           </div>
         </div>
 
-        <div class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card glass">
-            <span class="timeline-year">2025</span>
-            <h3>Python & SQL</h3>
-            <p>Earned Python Developer & SQL certifications. Built automation scripts and practiced database operations.</p>
+        <div class="timeline-item tl-right" data-aos="fade-left" data-aos-delay="300">
+          <div class="tl-node">
+            <div class="tl-node-icon"><i class="fa-brands fa-python"></i></div>
+            <div class="tl-pulse"></div>
+          </div>
+          <div class="tl-card glass-card">
+            <span class="tl-year">2025</span>
+            <h3>Python & SQL Certified</h3>
+            <p>Earned Python Developer & SQL certifications. Built automation scripts, practiced database operations and data structures with depth.</p>
           </div>
         </div>
 
-        <div class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card glass">
-            <span class="timeline-year">2025</span>
-            <h3>Exploring AI</h3>
-            <p>Diving deep into Artificial Intelligence and Machine Learning — fascinated by how it's reshaping the world.</p>
+        <div class="timeline-item tl-left" data-aos="fade-right" data-aos-delay="400">
+          <div class="tl-node">
+            <div class="tl-node-icon"><i class="fa-solid fa-brain"></i></div>
+            <div class="tl-pulse"></div>
+          </div>
+          <div class="tl-card glass-card">
+            <span class="tl-year">2025</span>
+            <h3>AI Exploration</h3>
+            <p>Diving deep into Artificial Intelligence and Machine Learning — fascinated by how it's reshaping the world and determined to build with it.</p>
           </div>
         </div>
 
-        <div class="timeline-item reveal">
-          <div class="timeline-dot pulse-dot"></div>
-          <div class="timeline-card glass active-card">
-            <span class="timeline-year">Now</span>
-            <h3>Full Stack & DSA <span class="live-badge">Live</span></h3>
-            <p>Learning backend development, mastering Data Structures & Algorithms, and working on real-world projects.</p>
+        <div class="timeline-item tl-right active-item" data-aos="fade-left" data-aos-delay="500">
+          <div class="tl-node active-node">
+            <div class="tl-node-icon"><i class="fa-solid fa-rocket"></i></div>
+            <div class="tl-pulse active-pulse"></div>
+          </div>
+          <div class="tl-card glass-card active-tl-card">
+            <span class="tl-year">Now <span class="live-badge">LIVE</span></span>
+            <h3>Full Stack & Startup Thinking</h3>
+            <p>Mastering backend development, DSA, and modern system design. Every line of code is a step closer to building my own startup.</p>
           </div>
         </div>
 
@@ -484,145 +607,141 @@ Available for opportunities
     </div>
   </section>
 
-  <!-- ======================== CONTACT ======================== -->
-  <section class="section contact" id="contact">
+  <!-- ══════════════════ CONTACT ══════════════════ -->
+  <section class="section contact-section" id="contact">
+    <div class="section-glow glow-center"></div>
     <div class="container">
-      <div class="section-label reveal">Contact</div>
-      <h2 class="section-title reveal">Get In Touch</h2>
-      <p class="section-sub reveal">Have a project, opportunity, or just want to say hi? My inbox is open.</p>
+      <div class="section-eyebrow" data-aos="fade-up">— Contact</div>
+      <h2 class="section-heading" data-aos="fade-up" data-aos-delay="80">
+        Let's Build<br><span class="text-accent">Something Together</span>
+      </h2>
+      <p class="section-sub" data-aos="fade-up" data-aos-delay="120">Have a project, opportunity, or just want to say hi? I'm always open.</p>
+
       <div class="contact-grid">
 
-        <div class="contact-info reveal">
-          <div class="contact-item glass">
-            <i class="fa-solid fa-envelope"></i>
-            <div>
+        <div class="contact-info" data-aos="fade-right" data-aos-delay="200">
+          <div class="contact-item glass-card">
+            <div class="ci-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div class="ci-text">
               <span>Email</span>
               <a href="mailto:moizd231@gmail.com">moizd231@gmail.com</a>
             </div>
           </div>
-          <div class="contact-item glass">
-            <i class="fa-solid fa-location-dot"></i>
-            <div>
+          <div class="contact-item glass-card">
+            <div class="ci-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="ci-text">
               <span>Location</span>
-              <a>Gandhinagar, Gujarat</a>
+              <a>Gandhinagar, Gujarat 🇮🇳</a>
             </div>
           </div>
-          <div class="contact-item glass">
-            <i class="fa-solid fa-phone"></i>
-            <div>
+          <div class="contact-item glass-card">
+            <div class="ci-icon"><i class="fa-solid fa-phone"></i></div>
+            <div class="ci-text">
               <span>Phone</span>
-              <a href="tel:+919313846266">+91 9313846266</a>
+              <a href="tel:+919313846266">+91 93138 46266</a>
             </div>
           </div>
-          <!-- Social links -->
-          <div class="social-links">
-            <a href="https://github.com/MoizD53" target="_blank" class="social-link" aria-label="GitHub">
-              <i class="fa-brands fa-github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/moiz-dheela-7829bb31b/" target="_blank" class="social-link" aria-label="LinkedIn">
-              <i class="fa-brands fa-linkedin-in"></i>
-            </a>
-            <a href="https://instagram.com/moizdheela" target="_blank" class="social-link" aria-label="Instagram">
-              <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="mailto:moizd231@gmail.com" class="social-link" aria-label="Email">
-              <i class="fa-solid fa-envelope"></i>
-            </a>
+
+          <div class="contact-social-row">
+            <a href="https://github.com/MoizD53" target="_blank" class="cs-icon" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/moiz-dheela-7829bb31b/" target="_blank" class="cs-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://instagram.com/moizdheela" target="_blank" class="cs-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="mailto:moizd231@gmail.com" class="cs-icon" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
           </div>
         </div>
 
-        <!-- CONTACT FORM — uses FormSubmit (no backend needed) -->
-        <!-- Replace YOUR_EMAIL below with your actual email address -->
-        <form
-  class="contact-form glass reveal"
-  id="contactForm"
->
-
-  <div class="form-group">
-    <label for="name">Name</label>
-
-    <input
-      type="text"
-      id="name"
-      name="from_name"
-      placeholder="Your Name"
-      required
-    />
-  </div>
-
-  <div class="form-group">
-    <label for="email">Email</label>
-
-    <input
-      type="email"
-      id="email"
-      name="from_email"
-      placeholder="your@email.com"
-      required
-    />
-  </div>
-
-  <div class="form-group">
-    <label for="message">Message</label>
-
-    <textarea
-      id="message"
-      name="message"
-      rows="5"
-      placeholder="Write your message..."
-      required
-    ></textarea>
-  </div>
-
-  <button type="submit" class="btn btn-primary btn-full">
-    <i class="fa-solid fa-paper-plane"></i>
-    Send Message
-  </button>
-
-</form>
+        <form class="contact-form glass-card" id="contactForm" data-aos="fade-left" data-aos-delay="300">
+          <div class="form-row-2">
+            <div class="field-group">
+              <label>Name</label>
+              <div class="field-wrap">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" name="from_name" placeholder="Your Name" required />
+                <div class="field-glow"></div>
+              </div>
+            </div>
+            <div class="field-group">
+              <label>Email</label>
+              <div class="field-wrap">
+                <i class="fa-solid fa-at"></i>
+                <input type="email" name="from_email" placeholder="your@email.com" required />
+                <div class="field-glow"></div>
+              </div>
+            </div>
+          </div>
+          <div class="field-group">
+            <label>Subject</label>
+            <div class="field-wrap">
+              <i class="fa-solid fa-tag"></i>
+              <input type="text" name="subject" placeholder="What's this about?" />
+              <div class="field-glow"></div>
+            </div>
+          </div>
+          <div class="field-group">
+            <label>Message</label>
+            <div class="field-wrap">
+              <i class="fa-solid fa-message"></i>
+              <textarea name="message" rows="5" placeholder="Tell me about your project or idea..." required></textarea>
+              <div class="field-glow"></div>
+            </div>
+          </div>
+          <button type="submit" class="send-btn" id="sendBtn">
+            <span class="sb-text"><i class="fa-solid fa-paper-plane"></i> Send Message</span>
+            <span class="sb-loading" style="display:none"><i class="fa-solid fa-circle-notch fa-spin"></i> Sending...</span>
+          </button>
+        </form>
 
       </div>
     </div>
   </section>
-  <!-- ======================== FOOTER ======================== -->
+
+  <!-- FOOTER -->
   <footer class="footer">
-    <div class="container">
-      <p>Designed &amp; built by <span class="highlight">Moiz Dheela</span> · 2026</p>
-      <p class="footer-sub">Made with <span class="heart"> ♥ </span> in Gandhinagar</p>
+    <div class="footer-inner">
+      <span class="footer-logo">Moiz Dheela</span>
+      <p class="footer-copy">Designed & built with <span>♥</span> in Gandhinagar, India · 2026</p>
+      <div class="footer-socials">
+        <a href="https://github.com/MoizD53" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/moiz-dheela-7829bb31b/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
     </div>
   </footer>
 
-  <script src="script.js"></script>
-  
+  <!-- SCRIPTS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="script.js"></script>
 
-<script>
-  emailjs.init("hJPWZoLWtW-6yRQRc");
-
-  document
-    .getElementById("contactForm")
-    .addEventListener("submit", function (event) {
-
-      event.preventDefault();
-
-      emailjs.sendForm(
-        "service_aua7ysu",
-        "template_ofrxh6h",
-        this
-      )
-      .then(function () {
-
-        alert("Message sent successfully!");
-
-      }, function (error) {
-
-        alert("Failed to send message.");
-        console.log(error);
-
-      });
-
+  <script>
+    emailjs.init("hJPWZoLWtW-6yRQRc");
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const btn = document.getElementById("sendBtn");
+      btn.querySelector(".sb-text").style.display = "none";
+      btn.querySelector(".sb-loading").style.display = "inline-flex";
+      btn.disabled = true;
+      emailjs.sendForm("service_aua7ysu", "template_ofrxh6h", this)
+        .then(() => {
+          btn.querySelector(".sb-loading").style.display = "none";
+          btn.querySelector(".sb-text").innerHTML = '<i class="fa-solid fa-check"></i> Sent!';
+          btn.querySelector(".sb-text").style.display = "inline-flex";
+          btn.style.background = "rgba(0,255,150,0.15)";
+          btn.style.borderColor = "rgba(0,255,150,0.4)";
+          setTimeout(() => {
+            btn.querySelector(".sb-text").innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
+            btn.disabled = false; btn.style.cssText = "";
+          }, 3500);
+        }, () => {
+          btn.querySelector(".sb-loading").style.display = "none";
+          btn.querySelector(".sb-text").innerHTML = '<i class="fa-solid fa-xmark"></i> Failed — try email';
+          btn.querySelector(".sb-text").style.display = "inline-flex";
+          btn.disabled = false;
+        });
     });
-</script>
+  </script>
 
 </body>
 </html>
