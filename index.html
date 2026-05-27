@@ -151,69 +151,45 @@
       </div>
 
       <!-- RIGHT — Avatar Scene -->
-      <div class="hero-right" id="heroRight">
-        <div class="avatar-scene" id="avatarScene">
+        <!-- RIGHT — IMAGE SCANNER -->
+<div class="hero-right" id="heroRight">
 
-          <!-- Rotating rings -->
-          <div class="ring ring-outer"></div>
-          <div class="ring ring-mid"></div>
-          <div class="ring ring-inner"></div>
+  <div class="hero-image">
 
-          <!-- Holographic grid -->
-          <div class="holo-grid"></div>
+    <!-- rotating scanner rings -->
+    <div class="scanner-ring"></div>
+    <div class="scanner-ring ring-2"></div>
 
-          <!-- Main avatar frame -->
-          <div class="avatar-frame" id="avatarFrame">
-            <!-- SVG illustrated avatar -->
-              <div class="avatar-art">
+    <!-- profile image -->
+    <div class="profile-wrapper">
 
-  <!-- YOUR IMAGE -->
-  <img src="assets/moiz.jpeg" alt="Moiz Dheela" class="real-avatar">
+      <img
+        src="assets/moiz.jpeg"
+        alt="Moiz Dheela"
+        class="profile-img"
+      >
 
-  <!-- overlay -->
-  <div class="avatar-overlay"></div>
+      <!-- scanning line -->
+      <div class="scan-line"></div>
+
+    </div>
+
+    <!-- floating particles -->
+    <div class="scanner-particle sp1"></div>
+    <div class="scanner-particle sp2"></div>
+    <div class="scanner-particle sp3"></div>
+
+  </div>
 
 </div>
 
-            <div class="avatar-glow-halo"></div>
-            <div class="avatar-scan-line" id="scanLine"></div>
-          </div>
-
-          <!-- Floating data chips -->
-          <div class="data-chip chip-1">
-            <i class="fa-solid fa-microchip"></i>
-            <div>
-              <div class="chip-label">Specialization</div>
-              <div class="chip-value">AI Engineer</div>
-            </div>
-          </div>
-          <div class="data-chip chip-2">
-            <i class="fa-solid fa-code"></i>
-            <div>
-              <div class="chip-label">Stack</div>
-              <div class="chip-value">Full Stack</div>
-            </div>
-          </div>
-          <div class="data-chip chip-3">
-            <i class="fa-solid fa-graduation-cap"></i>
-            <div>
-              <div class="chip-label">Degree</div>
-              <div class="chip-value">B.Tech CSE</div>
-            </div>
-          </div>
-          <div class="data-chip chip-4">
-            <i class="fa-solid fa-location-dot"></i>
-            <div>
-              <div class="chip-label">Location</div>
-              <div class="chip-value">India 🇮🇳</div>
-            </div>
-          </div>
-
-          <!-- Floating particles -->
-        </div>
+    <!-- Scroll hint -->
+    <div class="scroll-hint">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
       </div>
+      <span>Scroll</span>
     </div>
-
   </section>
 
   <!-- ══════════════════ ABOUT ══════════════════ -->
@@ -267,19 +243,19 @@
 
           <div class="stats-grid">
             <div class="stat-box" data-aos="zoom-in" data-aos-delay="300">
-              <span class="stat-num" data-target="5">0</span><span class="stat-suf">+</span>
+              <span class="stat-num" data-target="15">0</span><span class="stat-suf">+</span>
               <span class="stat-lbl">Projects Built</span>
             </div>
             <div class="stat-box" data-aos="zoom-in" data-aos-delay="380">
-              <span class="stat-num" data-target="300">0</span><span class="stat-suf">+</span>
+              <span class="stat-num" data-target="500">0</span><span class="stat-suf">+</span>
               <span class="stat-lbl">GitHub Commits</span>
             </div>
             <div class="stat-box" data-aos="zoom-in" data-aos-delay="460">
-              <span class="stat-num" data-target="8">0</span><span class="stat-suf">+</span>
+              <span class="stat-num" data-target="13">0</span><span class="stat-suf">+</span>
               <span class="stat-lbl">Technologies</span>
             </div>
             <div class="stat-box" data-aos="zoom-in" data-aos-delay="540">
-              <span class="stat-num" data-target="500">0</span><span class="stat-suf">+</span>
+              <span class="stat-num" data-target="1000">0</span><span class="stat-suf">+</span>
               <span class="stat-lbl">Coding Hours</span>
             </div>
           </div>
@@ -298,130 +274,53 @@
   </section>
 
   <!-- ══════════════════ SKILLS ══════════════════ -->
-  <section class="section skills-section" id="skills">
-    <div class="section-glow glow-right"></div>
-    <div class="container">
-      <div class="section-eyebrow" data-aos="fade-up">— Tech Stack</div>
-      <h2 class="section-heading" data-aos="fade-up" data-aos-delay="80">
-        Tools I Wield With<br><span class="text-accent">Precision</span>
-      </h2>
-      <p class="section-sub" data-aos="fade-up" data-aos-delay="120">Technologies I master to build the future.</p>
+    <div class="tech-slider">
 
-      <div class="skills-orbit" id="skillsOrbit">
-        <!-- Rendered by JS -->
-      </div>
+  <div class="tech-track">
 
-      <div class="project-showcase">
+    <div class="tech-ball"><i class="fa-brands fa-html5"></i><span>HTML</span></div>
 
-  <!-- Project 1 -->
-  <div class="pro-case glass-card">
+    <div class="tech-ball"><i class="fa-brands fa-css3-alt"></i><span>CSS</span></div>
 
-    <div class="pro-top">
-      <span class="pro-tag">AI / ML</span>
-      <span class="pro-year">2025</span>
-    </div>
+    <div class="tech-ball"><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
 
-    <h3>AI Learning & Experiments</h3>
+    <div class="tech-ball"><i class="fa-brands fa-react"></i><span>React</span></div>
 
-    <p>
-      Exploring neural networks, machine learning concepts,
-      and AI integrations while building intelligent systems
-      focused on real-world applications.
-    </p>
+    <div class="tech-ball"><i class="fa-brands fa-node-js"></i><span>Node.js</span></div>
 
-    <div class="pro-stack">
-      <span>Python</span>
-      <span>TensorFlow</span>
-      <span>Machine Learning</span>
-    </div>
+    <div class="tech-ball"><i class="fa-brands fa-python"></i><span>Python</span></div>
 
-    <div class="pro-bottom">
-      <div class="pro-stat">
-        <strong>10+</strong>
-        <span>Experiments</span>
-      </div>
+    <div class="tech-ball"><i class="fa-solid fa-database"></i><span>MongoDB</span></div>
 
-      <a href="https://github.com/MoizD53" target="_blank" class="pro-link">
-        View Project
-      </a>
-    </div>
+    <div class="tech-ball"><i class="fa-solid fa-wind"></i><span>Tailwind</span></div>
 
-  </div>
+    <div class="tech-ball"><i class="fa-solid fa-fire"></i><span>Firebase</span></div>
 
-  <!-- Project 2 -->
-  <div class="pro-case glass-card">
+    <div class="tech-ball"><i class="fa-solid fa-n"></i><span>Next.js</span></div>
 
-    <div class="pro-top">
-      <span class="pro-tag">FULL STACK</span>
-      <span class="pro-year">2025</span>
-    </div>
+    <div class="tech-ball"><i class="fa-brands fa-docker"></i><span>Docker</span></div>
 
-    <h3>Modern Portfolio System</h3>
+    <div class="tech-ball"><i class="fa-brands fa-aws"></i><span>AWS</span></div>
 
-    <p>
-      Designed and engineered a futuristic cinematic portfolio
-      with immersive animations, holographic UI,
-      AI-inspired interactions, and responsive design.
-    </p>
+    <!-- duplicate for infinite effect -->
 
-    <div class="pro-stack">
-      <span>HTML</span>
-      <span>CSS</span>
-      <span>JavaScript</span>
-    </div>
+    <div class="tech-ball"><i class="fa-brands fa-html5"></i><span>HTML</span></div>
 
-    <div class="pro-bottom">
-      <div class="pro-stat">
-        <strong>100%</strong>
-        <span>Responsive</span>
-      </div>
+    <div class="tech-ball"><i class="fa-brands fa-css3-alt"></i><span>CSS</span></div>
 
-      <a href="#" class="pro-link">
-        Live Demo
-      </a>
-    </div>
+    <div class="tech-ball"><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
 
-  </div>
+    <div class="tech-ball"><i class="fa-brands fa-react"></i><span>React</span></div>
 
-  <!-- Project 3 -->
-  <div class="pro-case glass-card">
+    <div class="tech-ball"><i class="fa-brands fa-node-js"></i><span>Node.js</span></div>
 
-    <div class="pro-top">
-      <span class="pro-tag">BACKEND</span>
-      <span class="pro-year">2025</span>
-    </div>
-
-    <h3>Python Automation Tools</h3>
-
-    <p>
-      Built automation scripts for productivity,
-      data handling, and repetitive workflows
-      using efficient Python logic.
-    </p>
-
-    <div class="pro-stack">
-      <span>Python</span>
-      <span>Automation</span>
-      <span>SQL</span>
-    </div>
-
-    <div class="pro-bottom">
-      <div class="pro-stat">
-        <strong>20+</strong>
-        <span>Scripts</span>
-      </div>
-
-      <a href="https://github.com/MoizD53" target="_blank" class="pro-link">
-        GitHub
-      </a>
-    </div>
+    <div class="tech-ball"><i class="fa-brands fa-python"></i><span>Python</span></div>
 
   </div>
 
 </div>
 
-    </div>
-  </section>
+</section>
 
   <!-- ══════════════════ PROJECTS ══════════════════ -->
   <section class="section projects-section" id="projects">
@@ -699,7 +598,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <span class="footer-logo">Moiz Dheela</span>
-      <p class="footer-copy">Designed & built with <span>♥</span> in Gandhinagar, India · 2026</p>
+      <p class="footer-copy">Designed & built with <span> ♥ </span> in Gandhinagar, India · 2026</p>
       <div class="footer-socials">
         <a href="https://github.com/MoizD53" target="_blank"><i class="fa-brands fa-github"></i></a>
         <a href="https://www.linkedin.com/in/moiz-dheela-7829bb31b/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>

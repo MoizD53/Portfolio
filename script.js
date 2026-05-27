@@ -524,21 +524,3 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
 
 console.log('%c🚀 MOIZ DHEELA', 'color:#00d4ff;font-size:1.5rem;font-weight:bold;font-family:monospace');
 console.log('%c   AI Engineer · Full Stack Developer · Future Founder', 'color:#6b7e96;font-size:0.8rem;font-family:monospace');
-
-/* reveal animation */
-
-const reveals = document.querySelectorAll(".reveal");
-
-window.addEventListener("scroll", () => {
-
-  reveals.forEach((el) => {
-
-    const top = el.getBoundingClientRect().top;
-
-    if(top < window.innerHeight - 100){
-      el.classList.add("active");
-    }
-
-  });
-
-});
