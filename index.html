@@ -151,45 +151,140 @@
       </div>
 
       <!-- RIGHT — Avatar Scene -->
-        <!-- RIGHT — IMAGE SCANNER -->
-<div class="hero-right" id="heroRight">
+      <div class="hero-right" id="heroRight">
+        <div class="avatar-scene" id="avatarScene">
 
-  <div class="hero-image">
+          <!-- Rotating rings -->
+          <div class="ring ring-outer"></div>
+          <div class="ring ring-mid"></div>
+          <div class="ring ring-inner"></div>
 
-    <!-- rotating scanner rings -->
-    <div class="scanner-ring"></div>
-    <div class="scanner-ring ring-2"></div>
+          <!-- Holographic grid -->
+          <div class="holo-grid"></div>
 
-    <!-- profile image -->
-    <div class="profile-wrapper">
+          <!-- Main avatar frame -->
+          <div class="avatar-frame" id="avatarFrame">
 
-      <img
-        src="assets/moiz.jpeg"
-        alt="Moiz Dheela"
-        class="profile-img"
-      >
-
-      <!-- scanning line -->
-      <div class="scan-line"></div>
-
-    </div>
-
-    <!-- floating particles -->
-    <div class="scanner-particle sp1"></div>
-    <div class="scanner-particle sp2"></div>
-    <div class="scanner-particle sp3"></div>
-
-  </div>
-
+            <!-- REAL IMAGE AVATAR -->
+<div class="avatar-art">
+  <img src="assets/moiz.jpeg" alt="Moiz Dheela" class="real-avatar">
 </div>
 
-    <!-- Scroll hint -->
-    <div class="scroll-hint">
-      <div class="scroll-mouse">
-        <div class="scroll-wheel"></div>
+                <!-- Body / jacket -->
+                <path d="M60 420 C60 340 90 300 160 285 C230 300 260 340 260 420Z" fill="url(#clothGrad)"/>
+                <!-- Collar/shirt inner -->
+                <path d="M140 285 L160 310 L180 285 C175 290 165 295 160 298 C155 295 145 290 140 285Z" fill="#0a0f1f"/>
+                <!-- Jacket lapels -->
+                <path d="M160 310 L130 345 L115 420 L145 420 L160 385 L175 420 L205 420 L190 345Z" fill="#111827"/>
+                <!-- Shirt collar -->
+                <path d="M148 287 L160 310 L172 287 C168 290 160 293 160 295 C160 293 152 290 148 287Z" fill="#e8e8e8"/>
+                <!-- Neck -->
+                <rect x="142" y="230" width="36" height="60" rx="18" fill="url(#skinGrad)"/>
+                <!-- Head -->
+                <ellipse cx="160" cy="155" rx="72" ry="85" fill="url(#skinGrad)"/>
+                <!-- Face glow -->
+                <ellipse cx="160" cy="140" rx="75" ry="90" fill="url(#glowFace)"/>
+                <!-- Forehead shadow -->
+                <ellipse cx="160" cy="90" rx="55" ry="20" fill="rgba(0,0,0,0.12)"/>
+                <!-- Hair — modern undercut style -->
+                <path d="M90 125 C88 70 110 50 160 48 C210 50 232 70 230 125 C220 110 210 100 200 95 C190 92 175 90 160 90 C145 90 130 92 120 95 C110 100 100 110 90 125Z" fill="#1a0a00"/>
+                <!-- Hair top texture -->
+                <path d="M105 90 C115 75 135 65 160 63 C185 65 205 75 215 90" fill="none" stroke="#2d1200" stroke-width="3"/>
+                <path d="M108 80 C120 68 140 60 160 58 C180 60 200 68 212 80" fill="none" stroke="#3d1800" stroke-width="2"/>
+                <!-- Sideburn fade -->
+                <path d="M91 120 C88 130 87 145 88 160 C88 155 90 145 93 135Z" fill="#1a0a00"/>
+                <path d="M229 120 C232 130 233 145 232 160 C232 155 230 145 227 135Z" fill="#1a0a00"/>
+                <!-- Ears -->
+                <ellipse cx="89" cy="160" rx="10" ry="14" fill="#b07850"/>
+                <ellipse cx="231" cy="160" rx="10" ry="14" fill="#b07850"/>
+                <!-- Eyes -->
+                <g class="avatar-eyes" id="avatarEyes">
+                  <!-- Left eye area -->
+                  <ellipse cx="133" cy="155" rx="18" ry="12" fill="#fff"/>
+                  <circle cx="133" cy="157" r="9" fill="#2d1800"/>
+                  <circle cx="133" cy="157" r="5" fill="#0d0800"/>
+                  <circle cx="136" cy="154" r="2.5" fill="rgba(255,255,255,0.9)"/>
+                  <!-- Right eye area -->
+                  <ellipse cx="187" cy="155" rx="18" ry="12" fill="#fff"/>
+                  <circle cx="187" cy="157" r="9" fill="#2d1800"/>
+                  <circle cx="187" cy="157" r="5" fill="#0d0800"/>
+                  <circle cx="190" cy="154" r="2.5" fill="rgba(255,255,255,0.9)"/>
+                  <!-- Eyebrows -->
+                  <path d="M116 142 C122 138 130 136 142 138" fill="none" stroke="#1a0a00" stroke-width="3.5" stroke-linecap="round"/>
+                  <path d="M178 138 C190 136 198 138 204 142" fill="none" stroke="#1a0a00" stroke-width="3.5" stroke-linecap="round"/>
+                  <!-- Eyelids -->
+                  <ellipse cx="133" cy="150" rx="18" ry="5" fill="url(#skinGrad)" class="eyelid-left" id="eyelidL"/>
+                  <ellipse cx="187" cy="150" rx="18" ry="5" fill="url(#skinGrad)" class="eyelid-right" id="eyelidR"/>
+                </g>
+                <!-- Nose -->
+                <path d="M153 170 C155 185 158 192 160 193 C162 192 165 185 167 170" fill="none" stroke="rgba(0,0,0,0.2)" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="152" cy="188" r="5" fill="rgba(0,0,0,0.1)"/>
+                <circle cx="168" cy="188" r="5" fill="rgba(0,0,0,0.1)"/>
+                <!-- Mouth / subtle smile -->
+                <path d="M143 207 C150 213 170 213 177 207" fill="none" stroke="#8b5a3a" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M143 207 C145 210 148 212 155 213" fill="none" stroke="#7a4a30" stroke-width="1.5" stroke-linecap="round"/>
+                <!-- Chin shadow -->
+                <ellipse cx="160" cy="225" rx="35" ry="10" fill="rgba(0,0,0,0.08)"/>
+                <!-- Holographic UI elements floating around face -->
+                <!-- Tech frame lines -->
+                <rect x="76" y="85" width="15" height="2" rx="1" fill="#00d4ff" opacity="0.7"/>
+                <rect x="76" y="85" width="2" height="15" rx="1" fill="#00d4ff" opacity="0.7"/>
+                <rect x="229" y="85" width="15" height="2" rx="1" fill="#00d4ff" opacity="0.7" transform="translate(244,85) scale(-1,1) translate(-244,-85)"/>
+                <rect x="229" y="85" width="2" height="15" rx="1" fill="#00d4ff" opacity="0.7" transform="translate(230,85) scale(-1,1) translate(-230,-85)"/>
+                <!-- Eye scan line -->
+                <line x1="88" y1="158" x2="232" y2="158" stroke="#00d4ff" stroke-width="0.5" opacity="0.4" stroke-dasharray="4,4"/>
+                <!-- Shirt details -->
+                <line x1="160" y1="310" x2="160" y2="420" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+                <!-- Jacket pocket -->
+                <rect x="120" y="355" width="25" height="18" rx="3" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+              </svg>
+            </div>
+
+            <div class="avatar-glow-halo"></div>
+            <div class="avatar-scan-line" id="scanLine"></div>
+          </div>
+
+          <!-- Floating data chips -->
+          <div class="data-chip chip-1">
+            <i class="fa-solid fa-microchip"></i>
+            <div>
+              <div class="chip-label">Specialization</div>
+              <div class="chip-value">AI PlateForms</div>
+            </div>
+          </div>
+          <div class="data-chip chip-2">
+            <i class="fa-solid fa-code"></i>
+            <div>
+              <div class="chip-label">Stack</div>
+              <div class="chip-value">Full Stack</div>
+            </div>
+          </div>
+          <div class="data-chip chip-3">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <div>
+              <div class="chip-label">Degree</div>
+              <div class="chip-value">B.Tech CSE</div>
+            </div>
+          </div>
+          <div class="data-chip chip-4">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>
+              <div class="chip-label">Location</div>
+              <div class="chip-value">Gandhinagar, Gujarat 🇮🇳</div>
+            </div>
+          </div>
+
+          <!-- Floating particles -->
+          <div class="float-particle fp1"></div>
+          <div class="float-particle fp2"></div>
+          <div class="float-particle fp3"></div>
+          <div class="float-particle fp4"></div>
+          <div class="float-particle fp5"></div>
+          <div class="float-particle fp6"></div>
+        </div>
       </div>
-      <span>Scroll</span>
     </div>
+
   </section>
 
   <!-- ══════════════════ ABOUT ══════════════════ -->
@@ -274,51 +369,115 @@
   </section>
 
   <!-- ══════════════════ SKILLS ══════════════════ -->
-    <div class="tech-slider">
+<section id="skills" class="section skills-section">
 
-  <div class="tech-track">
+    <div class="skills-left">
+        <span class="section-eyebrow">— MY SKILLS</span>
 
-    <div class="tech-ball"><i class="fa-brands fa-html5"></i><span>HTML</span></div>
+        <h2 class="skills-title">
+            TECHNOLOGIES <br>
+            I BUILD WITH
+        </h2>
 
-    <div class="tech-ball"><i class="fa-brands fa-css3-alt"></i><span>CSS</span></div>
+        <p class="skills-desc">
+            Building modern web applications using frontend,
+            backend, databases, cloud technologies and AI tools.
+        </p>
 
-    <div class="tech-ball"><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
+        <a href="#contact" class="btn-primary">
+            Contact Me
+        </a>
+    </div>
 
-    <div class="tech-ball"><i class="fa-brands fa-react"></i><span>React</span></div>
+    <div class="skills-right">
 
-    <div class="tech-ball"><i class="fa-brands fa-node-js"></i><span>Node.js</span></div>
+        <div class="orbit-container">
 
-    <div class="tech-ball"><i class="fa-brands fa-python"></i><span>Python</span></div>
+            <div class="center-skill">
+                <h3>FULL STACK</h3>
 
-    <div class="tech-ball"><i class="fa-solid fa-database"></i><span>MongoDB</span></div>
+                <p>
+                    Frontend • Backend • Database • Cloud
+                </p>
+            </div>
 
-    <div class="tech-ball"><i class="fa-solid fa-wind"></i><span>Tailwind</span></div>
+            <div class="orbit">
 
-    <div class="tech-ball"><i class="fa-solid fa-fire"></i><span>Firebase</span></div>
+                <div class="skill-node" style="--i:0">
+                    <i class="fa-brands fa-html5"></i>
+                    <span>HTML</span>
+                </div>
 
-    <div class="tech-ball"><i class="fa-solid fa-n"></i><span>Next.js</span></div>
+                <div class="skill-node" style="--i:1">
+                    <i class="fa-brands fa-css3-alt"></i>
+                    <span>CSS</span>
+                </div>
 
-    <div class="tech-ball"><i class="fa-brands fa-docker"></i><span>Docker</span></div>
+                <div class="skill-node" style="--i:2">
+                    <i class="fa-brands fa-js"></i>
+                    <span>JavaScript</span>
+                </div>
 
-    <div class="tech-ball"><i class="fa-brands fa-aws"></i><span>AWS</span></div>
+                <div class="skill-node" style="--i:3">
+                    <i class="fa-brands fa-react"></i>
+                    <span>React</span>
+                </div>
 
-    <!-- duplicate for infinite effect -->
+                <div class="skill-node" style="--i:4">
+                    <i class="fa-brands fa-node-js"></i>
+                    <span>Node.js</span>
+                </div>
 
-    <div class="tech-ball"><i class="fa-brands fa-html5"></i><span>HTML</span></div>
+                <div class="skill-node" style="--i:5">
+                    <i class="fa-brands fa-python"></i>
+                    <span>Python</span>
+                </div>
 
-    <div class="tech-ball"><i class="fa-brands fa-css3-alt"></i><span>CSS</span></div>
+                <div class="skill-node" style="--i:6">
+                    <i class="fa-solid fa-database"></i>
+                    <span>MongoDB</span>
+                </div>
 
-    <div class="tech-ball"><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
+                <div class="skill-node" style="--i:7">
+                    <i class="fa-solid fa-database"></i>
+                    <span>PostgreSQL</span>
+                </div>
 
-    <div class="tech-ball"><i class="fa-brands fa-react"></i><span>React</span></div>
+                <div class="skill-node" style="--i:8">
+                    <i class="fa-brands fa-linux"></i>
+                    <span>Linux</span>
+                </div>
 
-    <div class="tech-ball"><i class="fa-brands fa-node-js"></i><span>Node.js</span></div>
+                <div class="skill-node" style="--i:9">
+                    <i class="fa-brands fa-github"></i>
+                    <span>GitHub</span>
+                </div>
 
-    <div class="tech-ball"><i class="fa-brands fa-python"></i><span>Python</span></div>
+                <div class="skill-node" style="--i:10">
+                    <i class="fa-brands fa-docker"></i>
+                    <span>Docker</span>
+                </div>
 
-  </div>
+                <div class="skill-node" style="--i:11">
+                    <i class="fa-solid fa-code"></i>
+                    <span>C++</span>
+                </div>
 
-</div>
+                <div class="skill-node" style="--i:12">
+                    <i class="fa-brands fa-aws"></i>
+                    <span>AWS</span>
+                </div>
+
+                <div class="skill-node" style="--i:13">
+                    <i class="fa-solid fa-wind"></i>
+                    <span>Tailwind</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
@@ -598,7 +757,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <span class="footer-logo">Moiz Dheela</span>
-      <p class="footer-copy">Designed & built with <span> ♥ </span> in Gandhinagar, India · 2026</p>
+      <p class="footer-copy">Designed & built with <span>♥</span> in Gandhinagar, India · 2026</p>
       <div class="footer-socials">
         <a href="https://github.com/MoizD53" target="_blank"><i class="fa-brands fa-github"></i></a>
         <a href="https://www.linkedin.com/in/moiz-dheela-7829bb31b/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
